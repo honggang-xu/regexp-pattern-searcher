@@ -1,6 +1,6 @@
 # regexp-pattern-searcher
 a regexp pattern searcher using the finite state machine, deque and compiler techniques
-a wellformed regexp for REcompiler is specified as follows:
+a wellformed regexp for REcompiler is specified as follows:\n
 1	any symbol that does not have a special meaning (as given below) is a literal that matches itself
 	2	. is a wildcard symbol that matches any literal
 	3	adjacent regexps are concatenated to form a single regexp
