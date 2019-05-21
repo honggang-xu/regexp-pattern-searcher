@@ -1,7 +1,7 @@
 # regexp-pattern-searcher
 a regexp pattern searcher using the finite state machine, deque and compiler techniques
 
-REconpiler accepts a regexp pattern as a command-line argument and produce as standard output a description of the corresponding FSM, such that each line of output includes four things: the state-number, a string containing the input-symbol(s) this state must match (or branch-state indicator BR), and two numbers indicating the two possible next states if a match is made.
+REcompiler accepts a regexp pattern as a command-line argument and produce as standard output a description of the corresponding FSM, such that each line of output includes four things: the state-number, a string containing the input-symbol(s) this state must match (or branch-state indicator BR), and two numbers indicating the two possible next states if a match is made.
 
 * To use REcompiler
 
