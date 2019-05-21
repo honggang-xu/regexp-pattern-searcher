@@ -1,6 +1,12 @@
 # regexp-pattern-searcher
 a regexp pattern searcher using the finite state machine, deque and compiler techniques
 
+* To use REcompiler
+java REcompiler "regexp"
+
+* To use REsearcher with a given regexp
+java REcompiler "regexp" | java REsearcher <filename>
+	
 a wellformed regexp for REcompiler is specified as follows:
 
 	1	any symbol that does not have a special meaning (as given below) is a literal that matches itself	
