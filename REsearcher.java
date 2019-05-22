@@ -21,10 +21,20 @@ public class REsearcher
 			while ((line = stdReader.readLine()) != null)
 			{
 				String[] inputs = line.split(" ");
-				String state = inputs[1];
-				int next1 = Integer.parseInt(inputs[2]);
-				int next2 = Integer.parseInt(inputs[3]);
-				machine.addState(state, next1, next2);
+				if (inputs.length != 4)
+				{
+					String state = " ";
+					int next1 = Integer.parseInt(inputs[inputs.length - 2]);
+					int next2 = Integer.parseInt(inputs[inputs.length - 1]);
+					machine.addState(state, next1, next2);
+				}
+				else
+				{
+					String state = inputs[1];
+					int next1 = Integer.parseInt(inputs[2]);
+					int next2 = Integer.parseInt(inputs[3]);
+					machine.addState(state, next1, next2);
+				}	
 			}
 
 			//while there is input in the file

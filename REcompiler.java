@@ -90,6 +90,9 @@ public class REcompiler
 			//if looking at a *
 			if (regexp.charAt(pointer) == '*')
 			{
+				if (machine.getState(f).next1 == machine.getState(f).next2)
+						machine.getState(f).next2 = state;
+				machine.getState(f).next1 = state;
 				//add a branching state to the machine
 				machine.addState("BR", state + 1, t1);
 				//advance pointer
@@ -102,12 +105,16 @@ public class REcompiler
 			//if looking at a ?
 			else if (regexp.charAt(pointer) == '?')
 			{
+
 				//if there is a next character in the regular expression
 				if (pointer + 1 < regexp.length())
 				{
 					//if it follows a branching state, there is no need to create a branching state
 					if (regexp.charAt(pointer + 1) != '|')
 					{
+						if (machine.getState(f).next1 == machine.getState(f).next2)
+							machine.getState(f).next2 = state;
+						machine.getState(f).next1 = state;
 						machine.addState("BR", state + 1, t1);
 						r = state;
 						state++;
