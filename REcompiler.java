@@ -1,7 +1,7 @@
 import java.lang.IllegalArgumentException;
 
 /*
-Grammer Rules:
+Grammar Rules:
 E -> T
 E -> TE
 T -> F
