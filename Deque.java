@@ -1,6 +1,5 @@
 public class Deque
 {
-	//public int size;
 	//top of the dequeue
 	public Node first;
 	//end of the deque
