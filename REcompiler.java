@@ -72,8 +72,6 @@ public class REcompiler
 		{
 			if (isVocab(regexp.charAt(pointer)) || "([^\\.".indexOf(regexp.charAt(pointer)) >= 0)
 				expression();
-			//else
-				//error();
 		}	
 		return r;
 	}
@@ -156,7 +154,7 @@ public class REcompiler
 					machine.getState(f).next1 = state;
 				}
 			}
-		}	
+		}
 		return r;
 	}
 
@@ -194,7 +192,10 @@ public class REcompiler
 					r = expression();
 					//if there is a matching )
 					if (regexp.charAt(pointer) == ')')
+					{
+						//System.out.println("looking at )");
 						pointer++;
+					}
 					else
 					{
 						error();
@@ -300,8 +301,9 @@ public class REcompiler
 		initial = expression();
 		//set the initial state
 		machine.setState(0, initial, initial);
-		
-		
+		//if the regular expression has not been fully processed, show error
+		if (pointer != regexp.length())
+			error();
 		System.out.print(machine.print());
 	}
 
