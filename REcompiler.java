@@ -72,8 +72,8 @@ public class REcompiler
 		{
 			if (isVocab(regexp.charAt(pointer)) || "([^\\.".indexOf(regexp.charAt(pointer)) >= 0)
 				expression();
-			else
-				error();
+			//else
+				//error();
 		}	
 		return r;
 	}
