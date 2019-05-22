@@ -193,7 +193,6 @@ public class REcompiler
 					//if there is a matching )
 					if (regexp.charAt(pointer) == ')')
 					{
-						//System.out.println("looking at )");
 						pointer++;
 					}
 					else
